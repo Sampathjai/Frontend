@@ -65,3 +65,18 @@ ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .skills-container, .portfolio-box, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
+function sendToWhatsApp() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let number = document.getElementById("number").value;
+  let subject = document.getElementById("subject").value;
+  let message = document.getElementById("message").value;
+
+  let fullMessage = `Name: ${name}%0AEmail: ${email}%0ANumber: ${number}%0ASubject: ${subject}%0AMessage: ${message}`;
+
+  // Replace with your WhatsApp number (with country code, no + sign)
+  let phone = "919361091456";  
+
+  window.open(`https://wa.me/${phone}?text=${fullMessage}`, "_blank");
+}
