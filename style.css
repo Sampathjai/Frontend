@@ -264,68 +264,37 @@ span{
     align-items: center;
     gap: 2rem;
 }
-.portfolio-container .portfolio-box
-{
+.portfolio-box {
     position: relative;
-    border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
-    display: flex;
 }
-.portfolio-box img
-{
+
+.portfolio-box img {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 1rem;
-    transition: .5s ease;
 }
-.portfolio-box:hover img
-{
-    transform: scale(1.2);
-}
-.portfolio-box .portfolio-layer
-{
+
+.portfolio-box .portfolio-layer {
     position: absolute;
-    bottom: 0;
+    top: 0; /* instead of bottom */
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0,0,0,.1), var(--main-color));
-    display: flex;    
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
     padding: 4rem;
-    transform: translateY(100%);
+    opacity: 0; /* use opacity instead of translateY */
     transition: 0.5s ease;
 }
-.portfolio-box:hover .portfolio-layer
-{
-    transform: translateY(0);
-}
-.portfolio-layer h4
-{
-    font-size: 3rem;
-}
-.portfolio-layer p{
-    font-size: 1.2rem;
-    margin:2rem;
-}
-.portfolio-layer a
-{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background-color: var(--text-color);
-    border-radius: 50%;
-}
-.portfolio-layer a
-{
-    font-size: 2.5rem;
-    columns: var(--bg-color);
+
+.portfolio-box:hover .portfolio-layer {
+    opacity: 1;
 }
 .contact h2{
     margin-bottom: 3rem;
